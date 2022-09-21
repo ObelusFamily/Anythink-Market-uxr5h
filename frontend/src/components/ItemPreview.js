@@ -28,7 +28,6 @@ const ItemPreview = (props) => {
     } else {
       props.favorite(item.slug);
     }
-
   };
 
   return (
