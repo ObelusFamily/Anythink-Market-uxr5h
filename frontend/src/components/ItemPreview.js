@@ -19,6 +19,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 const ItemPreview = (props) => {
   const item = props.item;
+  const imgSrc = item.image || "placeholder.png";
 
   const handleClick = (ev) => {
     ev.preventDefault();
@@ -36,7 +37,7 @@ const ItemPreview = (props) => {
     >
       <img
         alt="item"
-        src={item.image}
+        src={imgSrc}
         className="card-img-top item-img"
         style={{ borderRadius: "20px" }}
       />
@@ -49,7 +50,7 @@ const ItemPreview = (props) => {
           <Link to={`/@${item.seller.username}`} className="flex-grow-1">
             <img
               src={item.seller.image}
-              alt={item.seller.username}
+              alt={item.seller.username || "placeholder.png"}
               className="user-pic rounded-circle pr-1"
             />
           </Link>
